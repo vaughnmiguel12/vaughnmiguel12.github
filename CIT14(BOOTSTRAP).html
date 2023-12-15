@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      padding: 20px;
+      background: url("https://marketplace.canva.com/EAFCO6pfthY/1/0/800w/canva-blue-green-watercolor-linktree-background-uZtwBmdoPsE.jpg") center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">
+    Register Here
+  </button>
+
+  <div class="modal" id="registerModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Registration Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="yearLevel">Year Level:</label>
+              <select class="form-control" id="yearLevel">
+                <option value="1">Year 1</option>
+                <option value="2">Year 2</option>
+                <option value="3">Year 3</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="registrationOutput" class="mt-4" style="display: none;">
+    <h3>Registration Details:</h3>
+    <p><strong>Name:</strong> <span id="outputName"></span></p>
+    <p><strong>Year Level:</strong> <span id="outputYearLevel"></span></p>
+  </div>
+</div>
+
+<script>
+  function register() {
+    var name = document.getElementById("name").value;
+    var yearLevel = document.getElementById("yearLevel").value;
+
+    document.getElementById("outputName").textContent = name;
+    document.getElementById("outputYearLevel").textContent = yearLevel;
+    document.getElementById("registrationOutput").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
+
