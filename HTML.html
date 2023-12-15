@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .container {
+    text-align: center;
+    margin-top: 50px;
+    background: #f4f4f4; /* Background color for the container */
+    padding: 20px;
+  }
+  .progress-container {
+    width: 300px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 20px;
+  }
+  .progress-bar {
+    width: 0;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="progress-container">
+    <div class="progress-bar">0%</div>
+  </div>
+
+  <button onclick="setProgress(33)">Button 1 (33%)</button>
+  <button onclick="setProgress(66)">Button 2 (66%)</button>
+  <button onclick="setProgress(100)">Button 3 (100%)</button>
+  <button onclick="resetProgress()">Reset</button>
+</div>
+
+<script>
+function setProgress(width) {
+  const progressBar = document.querySelector('.progress-bar');
+  progressBar.style.width = width + '%';
+  progressBar.textContent = width + '%';
+}
+
+function resetProgress() {
+  const progressBar = document.querySelector('.progress-bar');
+  progressBar.style.width = '0%';
+  progressBar.textContent = '0%';
+}
+</script>
+</body>
+</html>
